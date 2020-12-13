@@ -169,7 +169,7 @@ def pymyhealth(screen):
             else:
                 output.append(row[6])
             if row[7]:
-                output.append(row[7].replace("\n", '').replace("  ", ""))
+                output.append(row[7].replace("\n", ' ').replace("  ", ""))
             else:
                 output.append(row[7])
             screen.print_at("{0!s:>7s} {1!s:>10} {2!s:>10} {3!s:>10} {4!s:7} "
