@@ -12,7 +12,7 @@ parser.add_argument('-p', '--password', nargs='?', help='Password', default='', 
 parser.add_argument('-H', '--host', nargs='?', help='Host to connect to', default='localhost', type=str)
 parser.add_argument('-P', '--port', nargs='?', help='Port', default='3306', type=int)
 parser.add_argument('-S', '--socket', nargs='?', help='Socket', type=str)
-parser.add_argument('-r', '--refresh', nargs='?', help='Screen refresh rate', default='2', type=str)
+parser.add_argument('-r', '--refresh', nargs='?', help='Screen refresh rate', default='2', type=int)
 parser.add_argument('-v', '--verbose', help='Verbose/Debug output', default=False)
 
 args = parser.parse_args()
@@ -178,7 +178,7 @@ def pymyhealth(screen):
             if line == height:
                 break
         screen.refresh()
-        sleep(2)
+        sleep(args.refresh)
 
 
 Screen.wrapper(pymyhealth)
