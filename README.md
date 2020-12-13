@@ -10,3 +10,5 @@ PyMyHealth.py is a utility for gathering intelligence from a MySQL database.
 Has been tested on MariaDB and MySQL community 8.0.22.  Much more testing is needed.  
 The goal is to support 5.7+.  No support for 5.6 will be added, 
 but it may work with the proper sys tables and performance_schema added.
+
+![Screenshot](Screenshot%20from%202020-12-13%2012-26-00.png)
