@@ -1,10 +1,30 @@
 import PyMyHealth
 import mysql.connector
+import argparse
 
-conn = mysql.connector.connect(user='mcotner', password='gr33nday',
-                               host='localhost', database='employees',
-                               auth_plugin='mysql_native_password')
+parser = argparse.ArgumentParser(description='PyMyHealth is top for MySQL')
+parser.add_argument('-d', '--database', nargs='?', help='Database', default='INFORMATION_SCHEMA', type=str)
+parser.add_argument('-u', '--user', nargs='?', help='User', default='root', type=str)
+parser.add_argument('-p', '--password', nargs='?', help='Password', default='', type=str)
+parser.add_argument('-H', '--host', nargs='?', help='Host to connect to', default='localhost', type=str)
+parser.add_argument('-P', '--port', nargs='?', help='Port', default='3306', type=int)
+parser.add_argument('-S', '--socket', nargs='?', help='Socket', type=str)
+parser.add_argument('-r', '--refresh', nargs='?', help='Screen refresh rate', default='2', type=str)
+parser.add_argument('-v', '--verbose', help='Verbose/Debug output', default=False)
 
+args = parser.parse_args()
+
+if args.socket:
+    conn = mysql.connector.connect(user=args.user, password=args.password,
+                                   host=args.host, unix_socket=args.socket,
+                                   database=args.database)
+else:
+    conn = mysql.connector.connect(user=args.user, password=args.password,
+                                   host=args.host, database=args.database)
+
+health = PyMyHealth.PyMyHealth(conn, args.verbose)
+
+# TODO: Rewrite with selected testing framework for Python
 
 i = PyMyHealth.PyMyHealth(conn)
 print(i.set_metric('this', 10))

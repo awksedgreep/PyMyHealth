@@ -3,7 +3,6 @@ import mysql.connector
 from asciimatics.screen import Screen
 from asciimatics.constants import *
 from time import sleep
-import re
 import argparse
 
 parser = argparse.ArgumentParser(description='PyMyHealth is top for MySQL')
@@ -155,16 +154,14 @@ def pymyhealth(screen):
         # processlist
         line = 7
         for row in processlist:
-            output = []
-            output.append(row[0])
-            output.append(row[1][:10])
+            output = [row[0], row[1][:10]]
             if row[2]:
                 temp = row[2]
                 temp = temp.split(':')
-                output.append(re.sub("localhost", "localhost", temp[0]))
+                output.append(temp[0])
             else:
                 output.append('')
-            output.append(row[3])
+            output.append(row[3][:10])
             output.append(row[4])
             output.append(row[5])
             if row[6]:
