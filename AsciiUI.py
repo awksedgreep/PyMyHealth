@@ -63,7 +63,7 @@ def pymyhealth(screen):
         screen.print_at(' ' * width, 0, 3, 238, 0, 238)
         screen.print_at(' ' * width, 0, 4, 238, 0, 238)
         screen.print_at(' ' * width, 0, 5, 238, 0, 238)
-        screen.print_at('-' * width, 0, 6, COLOUR_BLUE, 0, 236)
+        screen.print_at('_' * width, 0, 6, COLOUR_BLUE, 0, 236)
         # first line
         screen.print_at('Py', 0, 0, COLOUR_BLUE, 0, 236)
         screen.print_at('My', 2, 0, COLOUR_CYAN, 0, 236)
@@ -76,6 +76,7 @@ def pymyhealth(screen):
         screen.print_at(':', center - 1, 3, COLOUR_BLUE, 0, 236)
         screen.print_at(':', center - 1, 4, COLOUR_BLUE, 0, 236)
         screen.print_at(':', center - 1, 5, COLOUR_BLUE, 0, 236)
+        screen.print_at(':', center - 1, 6, COLOUR_BLUE, 0, 236)
         screen.print_at(info['version_comment'], center - 37, 0, COLOUR_CYAN, 0, 236)
         screen.print_at(info['version'], center - 44, 0, COLOUR_CYAN, 0, 236)
         screen.print_at(info['user'] + ' on ' + info['hostname'] + ':' + str(info['port']),
