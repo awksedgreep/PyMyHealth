@@ -11,4 +11,4 @@ Has been tested on MariaDB and MySQL community 8.0.22.  Much more testing is nee
 The goal is to support 5.7+.  No support for 5.6 will be added, 
 but it may work with the proper sys tables and performance_schema added.
 
-![Screenshot](screenshot02.png)
+![Screenshot](images/screenshot02.png)
