@@ -150,7 +150,7 @@ def pymyhealth(screen):
         screen.print_at("CMD", 41, 6, COLOUR_CYAN, 0, 238)
         screen.print_at("TIME", 51, 6, COLOUR_CYAN, 0, 238)
         screen.print_at("STATE", 58, 6, COLOUR_CYAN, 0, 238)
-        screen.print_at("QUERY", 65, 6, COLOUR_CYAN, 0, 238)
+        screen.print_at("QUERY", 66, 6, COLOUR_CYAN, 0, 238)
         # processlist
         line = 7
         for row in processlist:
@@ -165,7 +165,7 @@ def pymyhealth(screen):
             output.append(row[4])
             output.append(row[5])
             if row[6]:
-                output.append(row[6][:8])
+                output.append(row[6][:9])
             else:
                 output.append(row[6])
             if row[7]:
@@ -173,7 +173,7 @@ def pymyhealth(screen):
             else:
                 output.append(row[7])
             screen.print_at("{0!s:>7s} {1!s:>10} {2!s:>10} {3!s:>10} {4!s:7} "
-                            "{5!s:>6} {6!s:<8} {7!s:155}".format(*output), 0, line, 166, 0, 238)
+                            "{5!s:>6} {6!s:<9} {7!s:155}".format(*output), 0, line, 166, 0, 238)
             line += 1
             if line == height:
                 break
