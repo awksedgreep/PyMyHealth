@@ -57,7 +57,7 @@ def pymyhealth(screen):
         height, width = screen.dimensions
         center = int(width / 2)
         # fill in for color header
-        screen.print_at('-' * width, 0, 0, COLOUR_BLACK, 0, 236)
+        screen.print_at('_' * width, 0, 0, COLOUR_BLACK, 0, 236)
         screen.print_at(' ' * width, 0, 1, 238, 0, 238)
         screen.print_at(' ' * width, 0, 2, 238, 0, 238)
         screen.print_at(' ' * width, 0, 3, 238, 0, 238)
