@@ -70,13 +70,9 @@ def pymyhealth(screen):
         screen.print_at('SQL ', 4, 0, 166, 0, 236)
         screen.print_at('Health', 8, 0, COLOUR_CYAN, 0, 236)
         # center labels
-        screen.print_at('Now : Avg', center - 5, 0, COLOUR_BLUE, 0, 236)
-        screen.print_at(':', center - 1, 1, COLOUR_BLUE, 0, 236)
-        screen.print_at(':', center - 1, 2, COLOUR_BLUE, 0, 236)
-        screen.print_at(':', center - 1, 3, COLOUR_BLUE, 0, 236)
-        screen.print_at(':', center - 1, 4, COLOUR_BLUE, 0, 236)
-        screen.print_at(':', center - 1, 5, COLOUR_BLUE, 0, 236)
-        screen.print_at(':', center - 1, 6, COLOUR_BLUE, 0, 236)
+        screen.print_at('Now | Avg', center - 5, 0, COLOUR_BLUE, 0, 236)
+        for i in range(7):
+            screen.print_at('|', center - 1, i, COLOUR_BLUE, 0, 236)
         screen.print_at(info['version_comment'], center - 37, 0, COLOUR_CYAN, 0, 236)
         screen.print_at(info['version'], center - 44, 0, COLOUR_CYAN, 0, 236)
         screen.print_at(info['user'] + ' on ' + info['hostname'] + ':' + str(info['port']),
