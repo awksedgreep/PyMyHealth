@@ -82,7 +82,7 @@ def pymyhealth(screen):
         if sys.platform == 'win32':
             light_blue = COLOUR_WHITE
             light_grey = COLOUR_BLACK
-            orange = COLOUR_MAGENTA
+            orange = COLOUR_GREEN
         else:
             light_blue = 236
             light_grey = 238
