@@ -80,9 +80,9 @@ def pymyhealth(screen):
         center = int(width / 2)
         # fill in for color header
         if sys.platform == 'win32':
-            light_blue = 0
-            light_grey = 8
-            orange = 3
+            light_blue = COLOUR_WHITE
+            light_grey = COLOUR_BLACK
+            orange = COLOUR_MAGENTA
         else:
             light_blue = 236
             light_grey = 238
