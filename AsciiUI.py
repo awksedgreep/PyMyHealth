@@ -118,13 +118,13 @@ def pymyhealth(screen):
         screen.print_at('Ins: ', 0, 2, COLOUR_CYAN, 0, light_grey)
         screen.print_at('Upd: ', 0, 3, COLOUR_CYAN, 0, light_grey)
         screen.print_at('Del: ', 0, 4, COLOUR_CYAN, 0, light_grey)
-        screen.print_at(f"{bytesize(query_dist['select'], '')} / {query_dist['select_pct']}%",
+        screen.print_at(f"{bytesize(query_dist['select'], '')} / {query_dist['select_pct']/100:.1%}",
                         5, 1, orange, 0, light_grey)
-        screen.print_at(f"{bytesize(query_dist['insert'], '')} / {query_dist['insert_pct']}%",
+        screen.print_at(f"{bytesize(query_dist['insert'], '')} / {query_dist['insert_pct']/100:.1%}",
                         5, 2, orange, 0, light_grey)
-        screen.print_at(f"{bytesize(query_dist['update'], '')} / {query_dist['update_pct']}%",
+        screen.print_at(f"{bytesize(query_dist['update'], '')} / {query_dist['update_pct']/100:.1%}",
                         5, 3, orange, 0, light_grey)
-        screen.print_at(f"{bytesize(query_dist['delete'], '')} / {query_dist['delete_pct']}%",
+        screen.print_at(f"{bytesize(query_dist['delete'], '')} / {query_dist['delete_pct']/100:.1%}",
                         5, 4, orange, 0, light_grey)
         # thread distribution
         screen.print_at('Threads', center + 30, 1, COLOUR_CYAN, 0, light_grey)
@@ -139,12 +139,12 @@ def pymyhealth(screen):
                         center + 30, 4, orange, 0, light_grey)
         screen.print_at(f"{thread_dist['max_conn']}", center + 30, 5, orange, 0, light_grey)
         # qps info
-        qps_now_str = f"{qps_delta:06}"
+        qps_now_str = f"{qps_delta}"
         screen.print_at(qps_now_str, center - len(qps_now_str) - 2, 2, orange, 0, light_grey)
-        screen.print_at(f"{int(qps):06}", center + 1, 2, orange, 0, light_grey)
+        screen.print_at(f"{int(qps)}", center + 1, 2, orange, 0, light_grey)
         # key efficiency
         screen.print_at(f"Key Eff: ", 0, 5, COLOUR_CYAN, 0, light_grey)
-        screen.print_at(f"{key_efficiency:3}%", 9, 5, orange, 0, light_grey)
+        screen.print_at(f"{key_efficiency/100:.1%}", 9, 5, orange, 0, light_grey)
         # network
         net_string_avg = f"{bytesize(network_avg['bytes_in_avg'])}/{bytesize(network_avg['bytes_out_avg'])}"
         net_string_now = f"{bytesize(network_delta['bytes_in'])}/{bytesize(network_delta['bytes_out'])}"
